@@ -1,5 +1,8 @@
 {
-  "builds": [
-    { "src": "api/*.py", "use": "@vercel/python" }
-  ]
+  "functions": {
+    "api/quote.py":      { "runtime": "@vercel/python@4.3.0" },
+    "api/history.py":    { "runtime": "@vercel/python@4.3.0" },
+    "api/news.py":       { "runtime": "@vercel/python@4.3.0" },
+    "api/financials.py": { "runtime": "@vercel/python@4.3.0" }
+  }
 }

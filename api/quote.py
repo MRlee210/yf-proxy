@@ -43,6 +43,8 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Cache-Control", "public, max-age=60")
+        self.send_header("Access-Control-Allow-Origin", "*")      # ← 추가
+        self.send_header("Access-Control-Allow-Methods", "GET, OPTIONS")  # ← 추가
         self.end_headers()
         self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
 
